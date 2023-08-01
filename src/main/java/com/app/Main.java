@@ -26,26 +26,20 @@ public class Main {
   }
 
   private static void actions() {
-    int action = 0;
-    action = checkInput();
+    int action = checkInput();
     if (action >= 0 && action <= vehicles.size()) {
       switch (action) {
-        case 0:
+        case 0 -> {
           printf("%n See you later!");
           System.exit(0);
-          break;
-        case 1:
-          getTimeFor(vehicles.get(action - 1));
-          break;
-        case 2:
-          getTimeFor(vehicles.get(action - 1));
-          break;
-        case 3:
-          getTimeFor(vehicles.get(action - 1));
-          break;
-        default:
+        }
+        case 1 -> getTimeFor(vehicles.get(action - 1));
+        case 2 -> getTimeFor(vehicles.get(action - 1));
+        case 3 -> getTimeFor(vehicles.get(action - 1));
+        default -> {
           printInstructions();
           actions();
+        }
       }
     } else {
       printInstructions();
